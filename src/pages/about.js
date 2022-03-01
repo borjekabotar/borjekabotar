@@ -48,7 +48,7 @@ const team = () => {
               <Card>
                 <Card.Body>
                   <Card.Title>Ilaria Elisea Scerrato</Card.Title>
-                  <Card.Text className="position">Anthropologist</Card.Text>
+                  <Card.Text className="position">Social Anthropologist</Card.Text>
                 </Card.Body>
               </Card>
             </CardGroup>
