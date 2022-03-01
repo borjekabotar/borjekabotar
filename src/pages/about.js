@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { GatsbySeo } from "gatsby-plugin-next-seo";
+import { Helmet } from "react-helmet";
 
 import Layout from "../templates/ConLayout";
 import { Row, Col, Card, CardGroup } from "react-bootstrap";
@@ -9,6 +10,7 @@ const team = () => {
   return (
     <div>
       <Layout>
+        
         <GatsbySeo
           title="Borj-e Kabotar | About"
           description="The team of Borj-e Kabotar"

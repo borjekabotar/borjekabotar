@@ -8,7 +8,7 @@ url: "https://borjekabotar.com/geo/"
 
 ![Map showing Iran's position in relation to other Asian countries](../../images/iran.jpg)
 
-##### Map showing Iran's position in relation to other countries
+###### Map showing Iran's position in relation to other countries
 
 The highest concentration of pigeons’ towers is located in the area of the oasis of [Isfahan](https://www.iranicaonline.org/articles/isfahan) crossed by the Zayandè river and its tributaries and on the westernmost area of the current province around [Golpayegan](https://www.iranicaonline.org/articles/golpayagan).
 
@@ -22,7 +22,7 @@ It is a semi-arid region with the Zāyandarud as the main water resource. In thi
 
 ![map of the area](../../images/survey_towers.jpg)
 
-##### Map representing the surveyed area
+###### Map representing the surveyed area
 
 #### **The Golpayegan area**
 

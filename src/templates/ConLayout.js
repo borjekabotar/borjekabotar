@@ -55,7 +55,7 @@ a {
       }
     }
   }
-  h5 {
+  h6 {
     text-align: center !important;
     font-style: italic;
     font-weight: 200;

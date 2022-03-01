@@ -79,9 +79,10 @@ const Wrapper = styled.section`
     font-family: "Montserrat", sans-serif !important;
   }
   h5 {
+    font-family: "Cinzel Decorative";
     font-size: 1rem;
     text-align: left;
-    font-weight: 600;
+    font-weight: 400;
     padding-bottom: 1rem;
   }
   p {
