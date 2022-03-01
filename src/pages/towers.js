@@ -39,7 +39,7 @@ const project = ({ data }) => {
         return (
           <Container key={k}>
             <Row className="col-md-8 mx-auto my-5">
-              <Col>
+              <Col className="post-content">
                 <div dangerouslySetInnerHTML={{ __html: node.html }} />
               </Col>
             </Row>

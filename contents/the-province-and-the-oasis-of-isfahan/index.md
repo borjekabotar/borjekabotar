@@ -6,7 +6,7 @@ tags: "province oasis isfahan"
 url: "https://borjekabotar.com/geo/"
 ---
 
-![Map showing Iran's position in relation to other Asian countries](../../images/iran.jpg)
+![iran-position](../../images/iran.jpg)
 
 ###### Map showing Iran's position in relation to other countries
 

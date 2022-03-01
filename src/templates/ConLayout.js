@@ -17,12 +17,27 @@ const Layout = ({ children }) => {
 };
 
 const Wrapper = styled.section`
-a {
-  color: rgb(60, 116, 190);
-  text-decoration: none;
-}
+  a {
+    color: rgb(60, 116, 190);
+    text-decoration: none;
+  }
   .col img {
     max-width: 850px !important;
+  }
+  .col.post-content img {
+    width: 330px !important;
+    @media (min-width: 576px) {
+      width: 400px !important;
+    }
+    @media (min-width: 768px) {
+      width: 400px !important;
+    }
+    @media (min-width: 992px) {
+      width: 730px !important;
+    }
+    @media (min-width: 1200px) {
+      width: 730px !important;
+    }
   }
   .bg-image {
     position: relative;
