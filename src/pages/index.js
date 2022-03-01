@@ -1,11 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { Button, Carousel } from 'react-bootstrap'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import { Button, Carousel } from "react-bootstrap";
 
-import Layout from "../templates/Layout"
+import Layout from "../templates/Layout";
 import Image2 from "../../static/images/sfondo_bk.jpg";
-
 
 const index = () => {
   return (
@@ -15,8 +14,8 @@ const index = () => {
           <Carousel.Item>
             <img className="d-block w-100" src={Image2} alt="Home" />
             <Carousel.Caption className="d-flex flex-column justify-content-center top-0">
-              <h1 className="d-md-inline-block d-none">Borj–e Kabotar</h1>
-              <p className="d-md-inline-block align-top d-none">
+              <h1 className="d-md-inline-block">Borj–e Kabotar</h1>
+              <p className="d-md-inline-block align-top">
                 Architecture and anthropology of the pigeon towers in the
                 Isfahan province
               </p>
@@ -29,14 +28,69 @@ const index = () => {
       </Wrapper>
     </Layout>
   );
-}
+};
 
 const Wrapper = styled.section`
+  .carousel-inner h1 {
+    font-size: 2.5rem !important;
+    @media (min-width: 576px) {
+      font-size: 2.5rem !important;
+    }
+    @media (min-width: 768px) {
+      font-size: 2.5rem !important;
+    }
+    @media (min-width: 992px) {
+      font-size: 3.5rem !important;
+    }
+    @media (min-width: 1200px) {
+      font-size: 3.5rem !important;
+    }
+  }
+  .carousel-inner p {
+    font-size: 1.5rem !important;
+    @media (min-width: 576px) {
+      font-size: 1.5rem !important;
+    }
+    @media (min-width: 768px) {
+      font-size: 1.5rem !important;
+    }
+    @media (min-width: 992px) {
+      font-size: 2rem !important;
+    }
+    @media (min-width: 1200px) {
+      font-size: 2rem !important;
+    }
+  }
   img {
-    max-width: 100%;
-    height: auto;
+    width: 50vh;
+    height: 100vh;
+    object-fit: cover;
     filter: brightness(70%);
+    @media (min-width: 576px) {
+      width: 50vh;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    @media (min-width: 768px) {
+      width: 50vh;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    @media (min-width: 992px) {
+      max-width: 100%;
+      height: 100%;
+      filter: brightness(70%);
+      object-fit: cover;
+    }
+    @media (min-width: 1200px) {
+      max-width: 100%;
+      height: 100%;
+      filter: brightness(70%);
+      object-fit: cover;
+    }
   }
 `;
 
-export default index
+export default index;
