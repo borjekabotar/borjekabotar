@@ -20,7 +20,7 @@ const team = () => {
             src="../../static/images/towers_isfahan.jpg"
             alt="About"
             objectFit="cover"
-            className="bg-image"
+            style={{ width: "300vh", height: "50vh" }}
           />
           <h2>Team</h2>
         </div>
@@ -37,7 +37,7 @@ const team = () => {
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Title>Ilaria Elisea Scerrato</Card.Title>
+                  <Card.Title>Fariba Saiedi Anaraki</Card.Title>
                   <Card.Text className="position">
                     Principal Investigator
                   </Card.Text>
@@ -45,10 +45,8 @@ const team = () => {
               </Card>
               <Card>
                 <Card.Body>
-                  <Card.Title>Fariba Saiedi Anaraki</Card.Title>
-                  <Card.Text className="position">
-                    Principal Investigator
-                  </Card.Text>
+                  <Card.Title>Ilaria Elisea Scerrato</Card.Title>
+                  <Card.Text className="position">Anthropologist</Card.Text>
                 </Card.Body>
               </Card>
             </CardGroup>
