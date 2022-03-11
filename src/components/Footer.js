@@ -34,7 +34,7 @@ const Footer = () => {
                   </a>
                 </p>
               </Col>
-              <Col>
+              {/* <Col>
                 <StaticImage
                   src="../../static/logos/ismeo.png"
                   alt="Logo Borj-e Kabotar"
@@ -61,7 +61,7 @@ const Footer = () => {
                   placeholder="blurred"
                   objectFit="contain"
                 />
-              </Col>
+              </Col> */}
             </Row>
             <Row></Row>
           </Container>
