@@ -1,18 +1,46 @@
 import React from "react";
 import styled from "styled-components";
+import { withPrefix } from "gatsby";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { GatsbySeo } from "gatsby-plugin-next-seo";
+import Seo from "../components/Seo";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <GatsbySeo
+      <Seo
         title="Borj-e Kabotar | Home"
         description="The towers for pigeons are widespread in the areas around Isfahan and Golpayegan and even today these buildings characterise the landscape. They are often imposing structures that can sometimes be mistaken for a defensive system. The earliest **towers** in the province of Isfahan date back to the 16th-17th centuries."
-        canonical="https://www.borjekabotar.com/"
-      />
+        url="https://www.borjekabotar.com/"
+        image={withPrefix(`/logos/logo_bn.png`)}
+      >
+        <link rel="shortcut icon" href={withPrefix("/favicon/favicon.ico")} />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href={withPrefix(`/favicon/favicon.ico`)}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={withPrefix(`/favicon/favicon-16x16.png`)}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={withPrefix(`/favicon/favicon-32x32.png`)}
+        />
+        <link
+          rel="apple-touch-icon"
+          type="image/png"
+          sizes="32x32"
+          href={withPrefix(`/favicon/apple-touch-icon.png`)}
+        />
+      </Seo>
+
       <Wrapper>
         <Header />
         {children}
