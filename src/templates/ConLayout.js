@@ -43,7 +43,7 @@ const Wrapper = styled.section`
     position: relative;
     margin: auto;
 
-    h2 {
+    h1 {
       font-family: "Cinzel Decorative";
       position: absolute;
       text-align: center;
