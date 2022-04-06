@@ -1,18 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { Button, Carousel } from "react-bootstrap";
-
+import Seo from "../components/Seo";
 import Layout from "../templates/Layout";
-import Image2 from "../../static/images/sfondo_bk.jpg";
+import Image from "../../static/images/sfondo_bk.jpg";
 
 const index = () => {
   return (
     <Layout>
+      <Seo
+        title="Borj-e Kabotar | Home"
+        description="Borj–e Kabotar is a project born to focus on architecture and anthropology of the pigeons towers in the Isfahan province and to study these imposing buildings with a diameter that can reach 20 meters and a height that touches 15 m."
+        url="https://borjekabotar.com/"
+        image={`${withPrefix(`/images/sfondo_bk.jpg`)}`}
+      />
       <Wrapper>
         <Carousel>
           <Carousel.Item>
-            <img className="d-block w-100" src={Image2} alt="Home" />
+            <img className="d-block w-100" src={Image} alt="Home" />
             <Carousel.Caption className="d-flex flex-column justify-content-center top-0">
               <h1 className="d-md-inline-block">Borj–e Kabotar</h1>
               <p className="d-md-inline-block align-top">

@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, withPrefix } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../components/Seo";
 import { Container, Row, Col } from "react-bootstrap";
@@ -15,6 +15,7 @@ const project = ({ data }) => {
   return (
     <Layout>
       <Seo
+<<<<<<< HEAD
         title={geography.frontmatter.title}
         description={
           geography.frontmatter.sommario
@@ -24,6 +25,16 @@ const project = ({ data }) => {
         // https://stackoverflow.com/a/24381515
         url={pageUrl}
         image="../../static/images/geo_setting_background.jpg"
+=======
+        title="Borj-e Kabotar | Geographical Setting"
+        description={
+          geography.frontmatter.description
+            ? geography.frontmatter.description
+            : geography.excerpt
+        }
+        url={pageUrl}
+        image={`${withPrefix(`/images/geo_setting_background.jpg`)}`}
+>>>>>>> master
       />
       <div className="bg-image">
         <StaticImage

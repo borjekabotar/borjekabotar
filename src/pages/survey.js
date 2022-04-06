@@ -1,25 +1,30 @@
 import React from "react";
-import { graphql} from "gatsby";
+import { graphql, withPrefix } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { GatsbySeo } from "gatsby-plugin-next-seo";
-
+import Seo from "../components/Seo";
 import Layout from "../templates/ConLayout";
 import { Container, Row, Col } from "react-bootstrap";
 
 const project = ({ data }) => {
-  const survey = data.allMarkdownRemark.edges;
+  const survey = data.markdownRemark;
+  const pageUrl =
+    `${data.site.siteMetadata.siteUrl}${survey.fields.slug}`.replace(
+      /([^:]\/)\/+/g,
+      "$1"
+    );
   return (
     <Layout>
-      {survey.map(({ node }, k) => {
-        return (
-          <GatsbySeo
-            key={k}
-            title="Borj-e Kabotar | Survey"
-            description={node.frontmatter.description}
-            canonical="https://www.borjekabotar.com/survey/"
-          />
-        );
-      })}
+      <Seo
+        title="Borj-e Kabotar | Survey"
+        description={
+          survey.frontmatter.description
+            ? survey.frontmatter.description
+            : survey.excerpt
+        }
+        url={pageUrl}
+        image={`${withPrefix(`/images/survey_pigeon_towers.jpg`)}`}
+      />
+
       <div className="bg-image">
         <StaticImage
           src="../../static/images/survey_background.jpg"
@@ -27,45 +32,41 @@ const project = ({ data }) => {
           objectFit="cover"
           style={{ width: "300vh", height: "50vh", filter: "brightness(60%)" }}
         />
-        {survey.map(({ node }, k) => {
-          return <h2>{node.frontmatter.title}</h2>;
-        })}
+        <h1>{survey.frontmatter.title}</h1>
       </div>
 
-      {survey.map(({ node }, k) => {
-        return (
-          <Container key={k}>
-            <Row className="col-md-8 mx-auto my-5">
-              <Col className="post-content">
-                <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              </Col>
-            </Row>
-          </Container>
-        );
-      })}
+      <Container>
+        <Row className="col-md-8 mx-auto my-5">
+          <Col className="post-content">
+            <div dangerouslySetInnerHTML={{ __html: survey.html }} />
+          </Col>
+        </Row>
+      </Container>
     </Layout>
   );
 };
 
 export const query = graphql`
   {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {
-          regex: "/contents/survey-of-the-pigeons-towers-in-the-isfahan-province/"
-        }
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    markdownRemark(
+      fileAbsolutePath: {
+        regex: "/contents/a-landscape-with-hundreds-of-pigeons-towers-around-isfahan/"
       }
     ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            description
-            tags
-            title
-            url
-          }
-        }
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        description
+        tags
+        title
+        url
       }
     }
   }

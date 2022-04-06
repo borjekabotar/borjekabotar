@@ -1,26 +1,30 @@
 import React from "react";
-import { graphql} from "gatsby";
+import { graphql, withPrefix} from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../templates/ConLayout";
-import { GatsbySeo } from "gatsby-plugin-next-seo";
-import { Container, Row, Col} from "react-bootstrap";
-import { Carousel } from "react-bootstrap";
+import Seo from "../components/Seo";
+import { Container, Row, Col, Carousel } from "react-bootstrap";
 
 const project = ({ data }) => {
-  const towers = data.allMarkdownRemark.edges;
+   const towers = data.markdownRemark;
+   const pageUrl =
+     `${data.site.siteMetadata.siteUrl}${towers.fields.slug}`.replace(
+       /([^:]\/)\/+/g,
+       "$1"
+     );
   return (
     <Layout>
-      {towers.map(({ node }, k) => {
-        return (
-          <GatsbySeo
-            key={k}
-            title="Borj-e Kabotar | Towers"
-            description={node.frontmatter.description}
-            canonical="https://www.borjekabotar.com/towers/"
-          />
-        );
-      })}
+      <Seo
+        title="Borj-e Kabotar | Towers"
+        description={
+          towers.frontmatter.description
+            ? towers.frontmatter.description
+            : towers.excerpt
+        }
+        url={pageUrl}
+        image={`${withPrefix(`/images/survey_towers.jpg`)}`}
+      />
 
       <div className="bg-image">
         <StaticImage
@@ -30,22 +34,17 @@ const project = ({ data }) => {
           placeholder="blurred"
           style={{ width: "300vh", height: "50vh" }}
         />
-        {towers.map(({ node }, k) => {
-          return <h2>{node.frontmatter.title}</h2>;
-        })}
+        <h1>{towers.frontmatter.title}</h1>
       </div>
 
-      {towers.map(({ node }, k) => {
-        return (
-          <Container key={k}>
+          <Container >
             <Row className="col-md-8 mx-auto my-5">
               <Col className="post-content">
-                <div dangerouslySetInnerHTML={{ __html: node.html }} />
+                <div dangerouslySetInnerHTML={{ __html: towers.html }} />
               </Col>
             </Row>
           </Container>
-        );
-      })}
+
       <Container>
         <Row className="col-md-8 mx-auto my-5">
           <Col>
@@ -354,23 +353,25 @@ const project = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {
-          regex: "/contents/a-landscape-with-hundreds-of-pigeons-towers/"
-        }
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    markdownRemark(
+      fileAbsolutePath: {
+        regex: "/contents/a-landscape-with-hundreds-of-pigeons-towers-around-isfahan/"
       }
     ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            description
-            tags
-            title
-            url
-          }
-        }
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        description
+        tags
+        title
+        url
       }
     }
   }
