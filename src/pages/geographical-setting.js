@@ -7,7 +7,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../templates/ConLayout";
 
 const project = ({ data }) => {
-  const geography = data.allMarkdownRemark.edges;
+  const geography = data.markdownRemark;
+  const pageUrl =
+    `${data.site.siteMetadata.siteUrl}${geography.fields.slug}`.replace(
+      /([^:]\/)\/+/g,
+      "$1"
+    );
   return (
     <Layout>
       {geography.map(({ node }, k) => {
@@ -50,23 +55,25 @@ const project = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {
-          regex: "/contents/the-province-and-the-oasis-of-isfahan/"
-        }
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    markdownRemark(
+      fileAbsolutePath: {
+        regex: "/contents/the-province-and-the-oasis-of-isfahan/"
       }
     ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            description
-            tags
-            title
-            url
-          }
-        }
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        description
+        tags
+        title
+        url
       }
     }
   }
