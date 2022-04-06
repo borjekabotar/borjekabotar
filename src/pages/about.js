@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { GatsbySeo } from "gatsby-plugin-next-seo";
-import { Helmet } from "react-helmet";
+import { withPrefix } from "gatsby";
+import Seo from "../components/Seo";
 
 import Layout from "../templates/ConLayout";
 import { Row, Col, Card, CardGroup } from "react-bootstrap";
@@ -10,11 +10,11 @@ const team = () => {
   return (
     <div>
       <Layout>
-        
-        <GatsbySeo
+        <Seo
           title="Borj-e Kabotar | About"
-          description="The team of Borj-e Kabotar"
-          canonical="https://www.borjekabotar.com/about/"
+          description=""
+          url="https://borjekabotar.com/about/"
+          image={`${withPrefix(`/images/towers_isfahan.jpg`)}`}
         />
 
         <div className="bg-image">
@@ -48,7 +48,9 @@ const team = () => {
               <Card>
                 <Card.Body>
                   <Card.Title>Ilaria Elisea Scerrato</Card.Title>
-                  <Card.Text className="position">Social Anthropologist</Card.Text>
+                  <Card.Text className="position">
+                    Social Anthropologist
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </CardGroup>
@@ -58,5 +60,6 @@ const team = () => {
     </div>
   );
 };
+
 
 export default team;
