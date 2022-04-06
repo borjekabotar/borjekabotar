@@ -1,25 +1,29 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, withPrefix } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { GatsbySeo } from "gatsby-plugin-next-seo";
-
+import Seo from "../components/Seo";
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../templates/ConLayout";
 
 const project = ({ data }) => {
-  const bibliography = data.allMarkdownRemark.edges;
+  const bibliography = data.markdownRemark;
+  const pageUrl =
+    `${data.site.siteMetadata.siteUrl}${bibliography.fields.slug}`.replace(
+      /([^:]\/)\/+/g,
+      "$1"
+    );
   return (
     <Layout>
-      {bibliography.map(({ node }, k) => {
-        return (
-          <GatsbySeo
-            key={k}
-            title="Borj-e Kabotar | Pubblications"
-            description={node.frontmatter.description}
-            canonical="https://www.borjekabotar.com/pubblications/"
-          />
-        );
-      })}
+      <Seo
+        title="Borj-e Kabotar | Pubblications"
+        description={
+          bibliography.frontmatter.description
+            ? bibliography.frontmatter.description
+            : bibliography.excerpt
+        }
+        url={pageUrl}
+        image={`${withPrefix(`/images/pubblications_background.jpg`)}`}
+      />
 
       <div className="bg-image">
         <StaticImage
@@ -28,43 +32,39 @@ const project = ({ data }) => {
           objectFit="cover"
           style={{ width: "300vh", height: "50vh", filter: "brightness(60%)" }}
         />
-        {bibliography.map(({ node }, k) => {
-          return <h2>{node.frontmatter.title}</h2>;
-        })}
+        <h1>{bibliography.frontmatter.title}</h1>
       </div>
 
-      {bibliography.map(({ node }, k) => {
-        return (
-          <Container key={k}>
-            <Row className="col-md-8 mx-auto my-5">
-              <Col className="post-content">
-                <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              </Col>
-            </Row>
-          </Container>
-        );
-      })}
+      <Container>
+        <Row className="col-md-8 mx-auto my-5">
+          <Col className="post-content">
+            <div dangerouslySetInnerHTML={{ __html: bibliography.html }} />
+          </Col>
+        </Row>
+      </Container>
     </Layout>
   );
 };
 
 export const query = graphql`
   {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/contents/bibliography-of-pigeon-towers/" }
+    site {
+      siteMetadata {
+        siteUrl
       }
+    }
+    markdownRemark(
+      fileAbsolutePath: { regex: "/contents/bibliography-of-pigeon-towers/" }
     ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            description
-            tags
-            title
-            url
-          }
-        }
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        description
+        tags
+        title
+        url
       }
     }
   }
