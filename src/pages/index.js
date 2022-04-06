@@ -16,7 +16,7 @@ const index = ({data}) => {
   return (
     <Layout>
       <Seo
-        title="Borj-e Kabotar | Home"
+        title="Borj-e Kabotar | Pigeon towers in Isfahan"
         description={
           content.frontmatter.description
             ? content.frontmatter.description
