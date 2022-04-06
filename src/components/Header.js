@@ -27,7 +27,7 @@ const Header = () => {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href={withPrefix(`/`)}>Home</Nav.Link>
                 <NavDropdown title="Project" id="basic-nav-dropdown">
-                  <NavDropdown.Item href={withPrefix(`/geo/`)}>
+                  <NavDropdown.Item href={withPrefix(`/geographical-setting/`)}>
                     Geographical Settings
                   </NavDropdown.Item>
                   <NavDropdown.Item href={withPrefix(`/towers/`)}>
@@ -39,7 +39,7 @@ const Header = () => {
                 </NavDropdown>
                 <Nav.Link href={withPrefix(`/webgis/`)}>WebGIS</Nav.Link>
                 <Nav.Link href={withPrefix(`/about/`)}>About</Nav.Link>
-                <Nav.Link href={withPrefix(`/pubblication/`)}>
+                <Nav.Link href={withPrefix(`/pubblications/`)}>
                   Pubblications
                 </Nav.Link>
                 <Nav.Link href={withPrefix(`/news/`)}>News</Nav.Link>
