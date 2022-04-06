@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, withPrefix } from "gatsby";
+import { Link } from "gatsby";
 import { Button, Carousel } from "react-bootstrap";
 import Layout from "../templates/Layout";
 import Image from "../../static/images/sfondo_bk.jpg";

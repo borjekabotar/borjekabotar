@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         url="https://www.borjekabotar.com/"
         image={withPrefix(`/images/sfondo_bk.jpg`)}
       >
-        <link rel="shortcut icon" href={withPrefix("/favicon/favicon.ico")} />
+        <link rel="shortcut icon" href={withPrefix(`/favicon/favicon.ico`)} />
         <link
           rel="icon"
           type="image/x-icon"
