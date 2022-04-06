@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, withPrefix } from "gatsby";
+import { Link, withPrefix, graphql } from "gatsby";
 import { Button, Carousel } from "react-bootstrap";
 import Layout from "../templates/Layout";
 import Seo from "../components/Seo";
@@ -53,11 +53,11 @@ export const query = graphql`
         siteUrl
       }
     }
-    markdownRemark(
-      fileAbsolutePath: {
-        regex: "/contents/home/"
+    markdownRemark(fileAbsolutePath: { regex: "/contents/home/" }) {
+      html
+      fields {
+        slug
       }
-    ) {
       frontmatter {
         description
         tags
