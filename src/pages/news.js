@@ -1,28 +1,31 @@
-import React from 'react'
-import { graphql } from "gatsby";
-import styled from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
-
-import { GatsbySeo } from "gatsby-plugin-next-seo";
+import React from "react";
+import { graphql, withPrefix } from "gatsby";
+import styled from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
+import Seo from "../components/Seo";
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../templates/ConLayout";
 
-const news = ({data}) => {
-  const content = data.allMarkdownRemark.edges;
+const news = ({ data }) => {
+  const content = data.markdownRemark;
+  const pageUrl =
+    `${data.site.siteMetadata.siteUrl}${content.fields.slug}`.replace(
+      /([^:]\/)\/+/g,
+      "$1"
+    );
   return (
     <Layout>
+      <Seo
+        title="Borj-e Kabotar | News"
+        description={
+          content.frontmatter.description
+            ? content.frontmatter.description
+            : content.excerpt
+        }
+        url={pageUrl}
+        image={`${withPrefix(`/images/news_background.jpg`)}`}
+      />
       <Wrapper>
-        {content.map(({ node }, k) => {
-          return (
-            <GatsbySeo
-              key={k}
-              title="Borj-e Kabotar | News"
-              description={node.frontmatter.description}
-              canonical="https://www.borjekabotar.com/news/"
-            />
-          );
-        })}
-
         <div className="bg-image">
           <StaticImage
             src="../../static/images/news_background.jpg"
@@ -30,42 +33,40 @@ const news = ({data}) => {
             objectFit="cover"
             style={{ width: "300vh", height: "50vh" }}
           />
-          {content.map(({ node }, k) => {
-            return <h2 key={k}>{node.frontmatter.title}</h2>;
-          })}
+          <h1>{content.frontmatter.title}</h1>
         </div>
 
-        {content.map(({ node }, k) => {
-          return (
-            <Container key={k}>
-              <Row className="col-md-8 mx-auto my-5">
-                <Col className="post-content">
-                  <div dangerouslySetInnerHTML={{ __html: node.html }} />
-                </Col>
-              </Row>
-            </Container>
-          );
-        })}
+        <Container>
+          <Row className="col-md-8 mx-auto my-5">
+            <Col className="post-content">
+              <div dangerouslySetInnerHTML={{ __html: content.html }} />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </Layout>
   );
-}
+};
 
 export const query = graphql`
   {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/contents/news-borj-e-kabotar/" } }
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    markdownRemark(
+      fileAbsolutePath: { regex: "/contents/news-borj-e-kabotar/" }
     ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            description
-            tags
-            title
-            url
-          }
-        }
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        description
+        tags
+        title
+        url
       }
     }
   }
@@ -78,4 +79,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default news
+export default news;
