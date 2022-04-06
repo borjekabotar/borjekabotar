@@ -1,13 +1,45 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { Button, Carousel } from "react-bootstrap";
 import Layout from "../templates/Layout";
+import Seo from "../components/Seo";
 import Image from "../../static/images/sfondo_bk.jpg";
 
 const index = () => {
   return (
     <Layout>
+      <Seo
+        title="Borj-e Kabotar | Home"
+        description="Borj–e Kabotar is a project born to focus on architecture and anthropology of the pigeons towers in the Isfahan province and to study these imposing buildings with a diameter that can reach 20 meters and a height that touches 15 m."
+        url="https://www.borjekabotar.com/"
+        image={withPrefix(`/images/sfondo_bk.jpg`)}
+      >
+        <link rel="shortcut icon" href={withPrefix(`/favicon/favicon.ico`)} />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href={withPrefix(`/favicon/favicon.ico`)}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={withPrefix(`/favicon/favicon-16x16.png`)}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={withPrefix(`/favicon/favicon-32x32.png`)}
+        />
+        <link
+          rel="apple-touch-icon"
+          type="image/png"
+          sizes="32x32"
+          href={withPrefix(`/favicon/apple-touch-icon.png`)}
+        />
+      </Seo>
       <Wrapper>
         <Carousel>
           <Carousel.Item>
