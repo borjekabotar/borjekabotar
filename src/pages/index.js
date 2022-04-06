@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { Button, Carousel } from "react-bootstrap";
 import Seo from "../components/Seo";
 import Layout from "../templates/Layout";
