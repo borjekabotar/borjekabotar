@@ -13,7 +13,7 @@ const index = () => {
         title="Borj-e Kabotar | Home"
         description="Borj–e Kabotar is a project born to focus on architecture and anthropology of the pigeons towers in the Isfahan province and to study these imposing buildings with a diameter that can reach 20 meters and a height that touches 15 m."
         url="https://www.borjekabotar.com/"
-        image={withPrefix(`/images/sfondo_bk.jpg`)}
+        image={`${withPrefix(`/images/sfondo_bk.jpg`)}`}
       >
         <link rel="shortcut icon" href={withPrefix(`/favicon/favicon.ico`)} />
         <link
