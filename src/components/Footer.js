@@ -15,7 +15,7 @@ const Footer = () => {
                 <StaticImage
                   src="../../static/logos/logo_bn.png"
                   alt="Logo Borj-e Kabotar"
-                  width="100"
+                  width= {100}
                   placeholder="blurred"
                   objectFit="contain"
                 />
