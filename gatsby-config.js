@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Borj-e Kabotar`,
-    description: `The towers for pigeons are widespread in the areas around Isfahan and Golpayegan and even today these buildings characterise the landscape. They are often imposing structures that can sometimes be mistaken for a defensive system. The earliest **towers** in the province of Isfahan date back to the 16th-17th centuries.`,
+    description: `Borj–e Kabotar is a project born to focus on architecture and anthropology of the pigeons towers in the Isfahan province and to study these imposing buildings with a diameter that can reach 20 meters and a height that touches 15 m.`,
     author: `Domizia D'Erasmo`,
     siteUrl: `https://borjekabotar.com/`,
   },
