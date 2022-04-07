@@ -16,7 +16,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-leaflet`,
     `gatsby-transformer-geojson`,
-    "gatsby-plugin-next-seo",
+    `gatsby-plugin-next-seo`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
