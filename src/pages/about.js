@@ -2,7 +2,6 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { withPrefix } from "gatsby";
 import Seo from "../components/Seo";
-
 import Layout from "../templates/ConLayout";
 import { Row, Col, Card, CardGroup } from "react-bootstrap";
 
@@ -16,15 +15,19 @@ const team = () => {
           url="https://borjekabotar.com/about/"
           image={`${withPrefix(`/images/towers_isfahan.jpg`)}`}
         />
-
-        <div className="bg-image">
+         <div className="bg-image">
           <StaticImage
-            src="../../static/images/towers_isfahan.jpg"
-            alt="About"
+            src="../../static/images/news_background.jpg"
+            alt="News"
             objectFit="cover"
-            style={{ width: "300vh", height: "50vh" }}
+            style={{
+              gridArea: "1/1",
+              height: "400px",
+              width: "100%",
+              position: "relative",
+            }}
           />
-          <h2>Team</h2>
+          <h1>Team</h1>
         </div>
         <Row className="col-md-8 mx-auto my-5">
           <Col>
@@ -60,6 +63,5 @@ const team = () => {
     </div>
   );
 };
-
 
 export default team;
