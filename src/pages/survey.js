@@ -27,7 +27,7 @@ const project = ({ data }) => {
 
       <div className="bg-image">
         <StaticImage
-          src="../../static/images/news_background.jpg"
+          src="../../static/images/survey_pigeon_towers.jpg"
           alt="News"
           objectFit="cover"
           style={{

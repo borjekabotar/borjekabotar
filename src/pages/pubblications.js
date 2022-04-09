@@ -26,7 +26,7 @@ const project = ({ data }) => {
       />
       <div className="bg-image">
         <StaticImage
-          src="../../static/images/news_background.jpg"
+          src="../../static/images/pubblications_background.jpg"
           alt="News"
           objectFit="cover"
           style={{
@@ -34,6 +34,7 @@ const project = ({ data }) => {
             height: "400px",
             width: "100%",
             position: "relative",
+            filter: "brightness(60%)"
           }}
         />
 

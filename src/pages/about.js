@@ -17,7 +17,7 @@ const team = () => {
         />
          <div className="bg-image">
           <StaticImage
-            src="../../static/images/news_background.jpg"
+            src="../../static/images/towers_isfahan.jpg"
             alt="News"
             objectFit="cover"
             style={{
@@ -25,6 +25,7 @@ const team = () => {
               height: "400px",
               width: "100%",
               position: "relative",
+              filter: "brightness(60%)"
             }}
           />
           <h1>Team</h1>
