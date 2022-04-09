@@ -15,17 +15,6 @@ const project = ({ data }) => {
   return (
     <Layout>
       <Seo
-<<<<<<< HEAD
-        title={geography.frontmatter.title}
-        description={
-          geography.frontmatter.sommario
-            ? geography.frontmatter.sommario
-            : geography.excerpt
-        }
-        // https://stackoverflow.com/a/24381515
-        url={pageUrl}
-        image="../../static/images/geo_setting_background.jpg"
-=======
         title="Borj-e Kabotar | Geographical Setting"
         description={
           geography.frontmatter.description
@@ -34,7 +23,6 @@ const project = ({ data }) => {
         }
         url={pageUrl}
         image={`${withPrefix(`/images/geo_setting_background.jpg`)}`}
->>>>>>> master
       />
       <div className="bg-image">
         <StaticImage
