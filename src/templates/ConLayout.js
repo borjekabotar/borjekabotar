@@ -44,29 +44,30 @@ const Wrapper = styled.section`
       } */
 
     h1 {
-      font-family: "Cinzel Decorative";
+      font-family: "Montserrat";
       position: absolute;
       text-align: center;
-      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-size: 2rem;
       color: white;
       left: 50%;
-      top: 50%;
+      top: 60%;
       transform: translate(-50%, -50%);
 
       @media (min-width: 576px) {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
 
       @media (min-width: 768px) {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       @media (min-width: 992px) {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       @media (min-width: 1200px) {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
       }
     }
   }
