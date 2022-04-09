@@ -15,7 +15,7 @@ const Footer = () => {
                 <StaticImage
                   src="../../static/logos/logo_bn.png"
                   alt="Logo Borj-e Kabotar"
-                  width="100"
+                  width= {100}
                   placeholder="blurred"
                   objectFit="contain"
                 />
@@ -34,34 +34,6 @@ const Footer = () => {
                   </a>
                 </p>
               </Col>
-              {/* <Col>
-                <StaticImage
-                  src="../../static/logos/ismeo.png"
-                  alt="Logo Borj-e Kabotar"
-                  width="170"
-                  placeholder="blurred"
-                  objectFit="contain"
-                  className="partner"
-                />
-              </Col>
-              <Col>
-                <StaticImage
-                  src="../../static/logos/min_aff_est.png"
-                  alt="Logo Borj-e Kabotar"
-                  width="200"
-                  placeholder="blurred"
-                  objectFit="contain"
-                />
-              </Col>
-              <Col>
-                <StaticImage
-                  src="../../static/logos/icar_logo.png"
-                  alt="Logo Borj-e Kabotar"
-                  width="100"
-                  placeholder="blurred"
-                  objectFit="contain"
-                />
-              </Col> */}
             </Row>
             <Row></Row>
           </Container>

@@ -1,18 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, withPrefix } from "gatsby";
+import { Link, withPrefix, graphql } from "gatsby";
 import { Button, Carousel } from "react-bootstrap";
-import Seo from "../components/Seo";
 import Layout from "../templates/Layout";
+import Seo from "../components/Seo";
 import Image from "../../static/images/sfondo_bk.jpg";
 
-const index = () => {
+const index = ({data}) => {
+  const content = data.markdownRemark;
+  const pageUrl =
+    `${data.site.siteMetadata.siteUrl}${content.fields.slug}`.replace(
+      /([^:]\/)\/+/g,
+      "$1"
+    );
   return (
     <Layout>
       <Seo
-        title="Borj-e Kabotar | Home"
-        description="Borj–e Kabotar is a project born to focus on architecture and anthropology of the pigeons towers in the Isfahan province and to study these imposing buildings with a diameter that can reach 20 meters and a height that touches 15 m."
-        url="https://borjekabotar.com/"
+        title="Borj-e Kabotar | Pigeon towers in Isfahan"
+        description={
+          content.frontmatter.description
+            ? content.frontmatter.description
+            : content.excerpt
+        }
+        url={pageUrl}
         image={`${withPrefix(`/images/sfondo_bk.jpg`)}`}
       />
       <Wrapper>
@@ -35,6 +45,28 @@ const index = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    markdownRemark(fileAbsolutePath: { regex: "/contents/home/" }) {
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        description
+        tags
+        title
+        url
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.section`
   .carousel-inner h1 {
