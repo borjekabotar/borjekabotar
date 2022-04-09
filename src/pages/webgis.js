@@ -5,8 +5,10 @@ import {
   TileLayer,
   GeoJSON,
   FeatureGroup,
-  Tooltip,
 } from "react-leaflet";
+import L from "leaflet";
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import "react-leaflet-markercluster/dist/styles.min.css"
 import styled from "styled-components";
 import { GatsbySeo } from "gatsby-plugin-next-seo";
 
@@ -15,6 +17,18 @@ import Layout from "../templates/Layout";
 
 const webgis = () => {
   const position = [32.42074, 53.68302];
+  const createPopups = (feature = {}, layer) => {
+    const { properties = {} } = feature;
+    const { fid } = properties;
+    const popup = L.popup();
+    const html = `
+      <div class="popup-container">
+      <p> Id: ${fid.toString()}</p>
+      </div>
+      `;
+    popup.setContent(html);
+    layer.bindPopup(popup);
+  };
   return (
     <>
       <Layout>
@@ -31,14 +45,13 @@ const webgis = () => {
               zoom={6}
               style={{ height: "100%", width: "100%", position: "absolute" }}
             >
-              
               <LayersControl position="topright">
-                <LayersControl.BaseLayer checked name="OpenStreetMap.Mapik">
+                {/* <LayersControl.BaseLayer checked name="OpenStreetMap.Mapik">
                   <TileLayer
                     attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
-                </LayersControl.BaseLayer>
+                </LayersControl.BaseLayer> */}
                 <LayersControl.BaseLayer checked name="Esri WorldImagery">
                   <TileLayer
                     attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
@@ -47,12 +60,13 @@ const webgis = () => {
                 </LayersControl.BaseLayer>
               </LayersControl>
               <FeatureGroup>
-                <GeoJSON data={pTowers}></GeoJSON>
-                <Tooltip
-                  direction="right"
-                  offset={[3, -2]}
-                  opacity={1}
-                ></Tooltip>
+                <MarkerClusterGroup
+                >
+                  <GeoJSON
+                    data={pTowers}
+                    onEachFeature={createPopups}
+                  ></GeoJSON>
+                </MarkerClusterGroup>
               </FeatureGroup>
             </MapContainer>
           </div>
