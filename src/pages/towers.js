@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, withPrefix} from "gatsby";
+import { graphql, withPrefix } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../templates/ConLayout";
@@ -7,12 +7,12 @@ import Seo from "../components/Seo";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 
 const project = ({ data }) => {
-   const towers = data.markdownRemark;
-   const pageUrl =
-     `${data.site.siteMetadata.siteUrl}${towers.fields.slug}`.replace(
-       /([^:]\/)\/+/g,
-       "$1"
-     );
+  const towers = data.markdownRemark;
+  const pageUrl =
+    `${data.site.siteMetadata.siteUrl}${towers.fields.slug}`.replace(
+      /([^:]\/)\/+/g,
+      "$1"
+    );
   return (
     <Layout>
       <Seo
@@ -25,25 +25,29 @@ const project = ({ data }) => {
         url={pageUrl}
         image={`${withPrefix(`/images/survey_towers.jpg`)}`}
       />
-
       <div className="bg-image">
         <StaticImage
-          src="../../static/images/towers_isfahan.jpg"
-          alt="Towers"
+          src="../../static/images/news_background.jpg"
+          alt="News"
           objectFit="cover"
-          placeholder="blurred"
-          style={{ width: "300vh", height: "50vh" }}
+          style={{
+            gridArea: "1/1",
+            height: "400px",
+            width: "100%",
+            position: "relative",
+          }}
         />
+
         <h1>{towers.frontmatter.title}</h1>
       </div>
 
-          <Container >
-            <Row className="col-md-8 mx-auto my-5">
-              <Col className="post-content">
-                <div dangerouslySetInnerHTML={{ __html: towers.html }} />
-              </Col>
-            </Row>
-          </Container>
+      <Container>
+        <Row className="col-md-8 mx-auto my-5">
+          <Col className="post-content">
+            <div dangerouslySetInnerHTML={{ __html: towers.html }} />
+          </Col>
+        </Row>
+      </Container>
 
       <Container>
         <Row className="col-md-8 mx-auto my-5">

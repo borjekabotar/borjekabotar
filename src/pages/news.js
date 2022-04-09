@@ -31,7 +31,12 @@ const news = ({ data }) => {
             src="../../static/images/news_background.jpg"
             alt="News"
             objectFit="cover"
-            style={{ width: "300vh", height: "50vh" }}
+            style={{
+              gridArea: "1/1",
+              height: "400px",
+              width: "100%",
+              position: "relative",
+            }}
           />
           <h1>{content.frontmatter.title}</h1>
         </div>

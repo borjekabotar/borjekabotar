@@ -14,20 +14,20 @@ const team = () => {
           description=""
           url="https://borjekabotar.com/about/"
           image={`${withPrefix(`/images/towers_isfahan.jpg`)}`}
-        />      
-        <div className="bg-image">
+        />
+         <div className="bg-image">
           <StaticImage
-            src="../../static/images/towers_isfahan.jpg"
-            alt="about borj-e kabotar"
-            title="about borj-e kabotar"
+            src="../../static/images/news_background.jpg"
+            alt="News"
             objectFit="cover"
             style={{
               gridArea: "1/1",
               height: "400px",
               width: "100%",
+              position: "relative",
             }}
           />
-          <h2>Team</h2>
+          <h1>Team</h1>
         </div>
         <Row className="col-md-8 mx-auto my-5">
           <Col>
@@ -63,6 +63,5 @@ const team = () => {
     </div>
   );
 };
-
 
 export default team;

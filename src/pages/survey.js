@@ -27,11 +27,17 @@ const project = ({ data }) => {
 
       <div className="bg-image">
         <StaticImage
-          src="../../static/images/survey_background.jpg"
-          alt="Survey"
+          src="../../static/images/news_background.jpg"
+          alt="News"
           objectFit="cover"
-          style={{ width: "300vh", height: "50vh", filter: "brightness(60%)" }}
+          style={{
+            gridArea: "1/1",
+            height: "400px",
+            width: "100%",
+            position: "relative",
+          }}
         />
+
         <h1>{survey.frontmatter.title}</h1>
       </div>
 
