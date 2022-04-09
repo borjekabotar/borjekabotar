@@ -36,6 +36,7 @@ const news = ({ data }) => {
               height: "400px",
               width: "100%",
               position: "relative",
+              filter: "brightness(60%)"
             }}
           />
           <h1>{content.frontmatter.title}</h1>

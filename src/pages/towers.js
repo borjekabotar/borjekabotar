@@ -23,11 +23,11 @@ const project = ({ data }) => {
             : towers.excerpt
         }
         url={pageUrl}
-        image={`${withPrefix(`/images/survey_towers.jpg`)}`}
+        image={`${withPrefix(`/images/towers_isfahan.jpg`)}`}
       />
       <div className="bg-image">
         <StaticImage
-          src="../../static/images/survey_towers.jpg"
+          src="../../static/images/towers_isfahan.jpg"
           alt="News"
           objectFit="cover"
           style={{
