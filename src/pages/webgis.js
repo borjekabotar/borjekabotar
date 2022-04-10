@@ -49,8 +49,8 @@ const webgis = () => {
               <LayersControl position="topright">
                 <LayersControl.BaseLayer checked name="OpenStreetMap.Mapik">
                   <TileLayer
-                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors &copy;  <a href='https://cloud.maptiler.com/maps/'>MapTiler</a>"
+                    url="https://api.maptiler.com/maps/topo/256/{z}/{x}/{y}.png?key=NpaEYD1cCEf6bmrpKKm9"
                   />
                 </LayersControl.BaseLayer>
                 <LayersControl.BaseLayer checked name="Esri WorldImagery">
