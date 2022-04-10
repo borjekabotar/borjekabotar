@@ -59,6 +59,9 @@ const Wrapper = styled.section`
     .dropdown-item {
       color: rgb(43, 20, 5) !important;
     }
+    .basic-nav-dropdown:active {
+      border:none!important;
+    }
     .dropdown-menu {
       background-color: rgba(255, 255, 255);
       border-radius: 0 !important;
@@ -80,8 +83,12 @@ const Wrapper = styled.section`
       overflow: hidden;
       opacity: 0;
     }
+    .dropdown-menu:active {
+      border: none !important;
+    }
     .dropdown-item:active {
       background-color: rgba(255, 255, 255)!important;
+      border: none !important;
     }
     .navbar-toggler-icon {
       filter: invert(100%);
