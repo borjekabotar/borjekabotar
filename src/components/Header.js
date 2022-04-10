@@ -36,12 +36,12 @@ const Header = () => {
                   <NavDropdown.Item href={withPrefix(`/survey/`)}>
                     Survey
                   </NavDropdown.Item>
+                  <NavDropdown.Item href={withPrefix(`/pubblications/`)}>
+                    Pubblications
+                  </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href={withPrefix(`/webgis/`)}>WebGIS</Nav.Link>
                 <Nav.Link href={withPrefix(`/about/`)}>About</Nav.Link>
-                <Nav.Link href={withPrefix(`/pubblications/`)}>
-                  Pubblications
-                </Nav.Link>
                 <Nav.Link href={withPrefix(`/news/`)}>News</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -54,17 +54,29 @@ const Header = () => {
 
 //style
 const Wrapper = styled.section`
+  .navbar {
+    position: absolute;
+  }
   .dropdown-menu {
     background-color: rgba(255, 255, 255);
+    border-radius: 0 !important;
+    width: 235px !important;
   }
-  .dropdown-item {
-    font-family: "Montserrat", sans-serif !important;
-    color: rgb(0,0,0);
-    &:hover {
-      color: rgb(0,0,0);
-      background-color: transparent;
-      text-decoration: underline!important;
-    }
+  .show > .dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+  }
+  .dropdown-menu {
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
   }
   .navbar-toggler-icon {
     filter: invert(100%);
@@ -77,16 +89,12 @@ const Wrapper = styled.section`
     color: rgba(255, 255, 255) !important;
     font-weight: 500;
     font-size: 1rem;
-    margin-left: 1rem;
+    width: 120px;
     &:hover {
       color: rgba(255, 255, 255) !important;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-left: 1rem;
+      transition: all 0.8s;
+      letter-spacing: 2px;
     }
-  }
-  .navbar{
-    position: absolute;
   }
 `;
 

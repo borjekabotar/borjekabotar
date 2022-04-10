@@ -6,7 +6,7 @@ import Layout from "../templates/Layout";
 import Seo from "../components/Seo";
 import Image from "../../static/images/sfondo_bk.jpg";
 
-const index = ({data}) => {
+const index = ({ data }) => {
   const content = data.markdownRemark;
   const pageUrl =
     `${data.site.siteMetadata.siteUrl}${content.fields.slug}`.replace(
@@ -31,13 +31,18 @@ const index = ({data}) => {
             <img className="d-block w-100" src={Image} alt="Home" />
             <Carousel.Caption className="d-flex flex-column justify-content-center top-0">
               <h1 className="d-md-inline-block">Borj–e Kabotar</h1>
-              <p className="d-md-inline-block align-top">
-                Architecture and anthropology of the pigeon towers in the
+              <p className="d-md-inline-block d-none d-sm-block align-top">
+                Architecture and anthropology of the <br></br>pigeon towers in the
                 Isfahan province
               </p>
-              <Link to="/webgis" title="Web GIS">
-                <Button variant="link">Explore WebGIS</Button>
-              </Link>
+
+              <div class="box-1">
+                <Link to="/webgis" title="Web GIS">
+                  <div class="btn btn-one">
+                    <span>EXPLORE WEBGIS</span>
+                  </div>
+                </Link>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
