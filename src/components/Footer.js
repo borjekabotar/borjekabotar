@@ -54,6 +54,9 @@ const Wrapper = styled.section`
     padding: 2rem 2rem;
     background-color: whitesmoke;
     font-family: "Montserrat", sans-serif !important;
+    img {
+      padding-bottom: 2rem;
+    }
     h5,
     h6 {
       font-family: "Montserrat", sans-serif !important;
