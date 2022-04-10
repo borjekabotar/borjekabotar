@@ -71,6 +71,10 @@ const Wrapper = styled.section`
       }
     }
   }
+  h4 {
+    color: rgb(43,20,5)!important;
+    font-weight: 400;
+  }
   h6 {
     text-align: center !important;
     font-style: italic;
@@ -79,6 +83,38 @@ const Wrapper = styled.section`
     padding-bottom: 2rem;
     color: gray;
   }
+  footer {
+    padding: 2rem 2rem;
+    background-color: whitesmoke;
+    font-family: "Montserrat", sans-serif !important;
+    h5,
+    h6 {
+      font-family: "Montserrat", sans-serif !important;
+      color: rgb(43, 20, 5) !important;
+      font-size: 1rem !important;
+      text-align: left !important;
+      font-weight: 400 !important;
+      padding-bottom: 0.5rem !important;
+      font-style: normal !important;
+    }
+    .b-and-w {
+      margin-top: 2rem;
+      filter: invert(100%);
+    }
+    p {
+      text-align: left !important;
+      font-size: 0.8rem !important;
+      font-weight: 300 !important;
+    }
+    p a {
+      color: rgb(43, 20, 5) !important;
+      font-weight: 400 !important;
+    }
+    .partner img {
+      filter: invert(100%);
+    }
+  }
+  
 `;
 
 export default Layout;

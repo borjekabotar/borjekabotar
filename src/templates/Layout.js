@@ -96,6 +96,7 @@ const Wrapper = styled.section`
   }
   .btn-one:hover span {
     letter-spacing: 2px;
+    color: #FFF;
   }
   .btn-one:hover::before {
     opacity: 1; 

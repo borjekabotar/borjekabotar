@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, withPrefix, graphql } from "gatsby";
-import { Button, Carousel } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import Layout from "../templates/Layout";
 import Seo from "../components/Seo";
 import Image from "../../static/images/sfondo_bk.jpg";
