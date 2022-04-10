@@ -18,7 +18,7 @@ const Header = () => {
               <img
                 alt="Logo Borj-e Kabotar"
                 src={Logo}
-                width="100"
+                width={50}
                 className="d-md-inline-block align-top d-none"
               />
             </Navbar.Brand>
@@ -41,6 +41,7 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href={withPrefix(`/webgis/`)}>WebGIS</Nav.Link>
+                <Nav.Link href={withPrefix(`/downloads/`)}>Downloads</Nav.Link>
                 <Nav.Link href={withPrefix(`/about/`)}>About</Nav.Link>
                 <Nav.Link href={withPrefix(`/news/`)}>News</Nav.Link>
               </Nav>
