@@ -18,7 +18,7 @@ const Header = () => {
               <img
                 alt="Logo Borj-e Kabotar"
                 src={Logo}
-                width="100"
+                width={50}
                 className="d-md-inline-block align-top d-none"
               />
             </Navbar.Brand>
@@ -27,11 +27,11 @@ const Header = () => {
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href={withPrefix(`/`)}>Home</Nav.Link>
                 <NavDropdown title="Project" id="basic-nav-dropdown">
+                  <NavDropdown.Item href={withPrefix(`/towers/`)}>
+                    Pigeon Towers
+                  </NavDropdown.Item>
                   <NavDropdown.Item href={withPrefix(`/geographical-setting/`)}>
                     Geographical Settings
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href={withPrefix(`/towers/`)}>
-                    Towers
                   </NavDropdown.Item>
                   <NavDropdown.Item href={withPrefix(`/survey/`)}>
                     Survey

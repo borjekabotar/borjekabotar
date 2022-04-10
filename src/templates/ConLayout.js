@@ -47,7 +47,7 @@ const Wrapper = styled.section`
       font-family: "Montserrat";
       position: absolute;
       text-align: center;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       font-size: 2rem;
       color: white;
       left: 50%;
