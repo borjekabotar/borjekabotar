@@ -80,6 +80,9 @@ const Wrapper = styled.section`
       overflow: hidden;
       opacity: 0;
     }
+    .dropdown-item:active {
+      background-color: rgba(255, 255, 255)!important;
+    }
     .navbar-toggler-icon {
       filter: invert(100%);
     }
