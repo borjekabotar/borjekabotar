@@ -28,9 +28,10 @@ const team = () => {
               filter: "brightness(60%)"
             }}
           />
-          <h1>Team</h1>
+          <h1>About</h1>
         </div>
         <Row className="col-md-8 mx-auto my-5">
+        <h2>Team</h2>
           <Col>
             <CardGroup>
               <Card>
@@ -58,6 +59,12 @@ const team = () => {
                 </Card.Body>
               </Card>
             </CardGroup>
+          </Col>
+        </Row>
+        <Row className="col-md-8 mx-auto my-5">
+          <Col>
+          <h3>Credits</h3>
+          <p>The website and the webGIS have been created by  <a href="https://www.linkedin.com/in/domizia-d-erasmo-927087195/">Domizia D'Erasmo</a>.</p>
           </Col>
         </Row>
       </Layout>

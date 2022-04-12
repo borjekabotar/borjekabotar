@@ -42,7 +42,6 @@ const Wrapper = styled.section`
       @media (min-width: 1200px) {
         width: 730px !important;
       } */
-
     h1 {
       font-family: "Montserrat";
       position: absolute;
@@ -70,6 +69,13 @@ const Wrapper = styled.section`
         font-size: 3.5rem;
       }
     }
+  }
+  .card {
+    border: none !important;
+  }
+  .card-body {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
   h4 {
     color: rgb(43,20,5)!important;
