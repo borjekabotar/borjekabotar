@@ -15,7 +15,7 @@ const team = () => {
           url="https://borjekabotar.com/about/"
           image={`${withPrefix(`/images/towers_isfahan.jpg`)}`}
         />
-         <div className="bg-image">
+        <div className="bg-image">
           <StaticImage
             src="../../static/images/towers_isfahan.jpg"
             alt="News"
@@ -25,29 +25,25 @@ const team = () => {
               height: "400px",
               width: "100%",
               position: "relative",
-              filter: "brightness(60%)"
+              filter: "brightness(60%)",
             }}
           />
           <h1>About</h1>
         </div>
         <Row className="col-md-8 mx-auto my-5">
-        <h2>Team</h2>
+          <h2>Team</h2>
           <Col>
             <CardGroup>
               <Card>
                 <Card.Body>
                   <Card.Title>Danilo Rosati</Card.Title>
-                  <Card.Text className="position">
-                    Principal Investigator
-                  </Card.Text>
+                  <Card.Text className="position">Project director</Card.Text>
                 </Card.Body>
               </Card>
               <Card>
                 <Card.Body>
                   <Card.Title>Fariba Saiedi Anaraki</Card.Title>
-                  <Card.Text className="position">
-                    Principal Investigator
-                  </Card.Text>
+                  <Card.Text className="position">Project director</Card.Text>
                 </Card.Body>
               </Card>
               <Card>
@@ -63,8 +59,14 @@ const team = () => {
         </Row>
         <Row className="col-md-8 mx-auto my-5">
           <Col>
-          <h3>Credits</h3>
-          <p>The website and the webGIS have been created by  <a href="https://www.linkedin.com/in/domizia-d-erasmo-927087195/">Domizia D'Erasmo</a>.</p>
+            <h3>Credits</h3>
+            <p>
+              The website and the webGIS have been created by{" "}
+              <a href="https://www.linkedin.com/in/domizia-d-erasmo-927087195/">
+                Domizia D'Erasmo
+              </a>
+              and <a href="https://uniroma1.academia.edu/NoemiGiovino">Noemi Giovino</a>.
+            </p>
           </Col>
         </Row>
       </Layout>
