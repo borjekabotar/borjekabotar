@@ -61,7 +61,7 @@ export const query = graphql`
     }
     markdownRemark(
       fileAbsolutePath: {
-        regex: "/contents/a-landscape-with-hundreds-of-pigeons-towers-around-isfahan/"
+        regex: "/contents/survey-of-the-pigeons-towers-in-the-isfahan-province/"
       }
     ) {
       html
