@@ -39,8 +39,41 @@ const Footer = () => {
                   </a>
                 </p>
               </Col>
+              <Col sm={1}>
+              </Col>
+              <Col sm={1}>
+                <StaticImage
+                  src="../../static/logos/ismeo.png"
+                  alt="Logo Borj-e Kabotar"
+                  width={150}
+                  placeholder="blurred"
+                  objectFit="contain"
+                  className="b-and-w"
+                />
+              </Col>
+              <Col sm={1}>
+                <StaticImage
+                  src="../../static/logos/icar_logo.png"
+                  alt="Logo Borj-e Kabotar"
+                  width={60}
+                  placeholder="blurred"
+                  objectFit="contain"
+                  className="image"
+                />
+              </Col>
+              <Col sm={2}>
+                <StaticImage
+                  src="../../static/logos/min_aff_est.png"
+                  alt="Logo Borj-e Kabotar"
+                  width={120}
+                  placeholder="blurred"
+                  objectFit="contain"
+                  className="image"
+                />
+              </Col>
             </Row>
-            <Row></Row>
+            <Row>
+            </Row>
           </Container>
         </footer>
       </Wrapper>
@@ -70,6 +103,9 @@ const Wrapper = styled.section`
     .b-and-w {
       margin-top: 2rem;
       filter: invert(100%);
+    }
+    .image {
+      margin-top: 2rem;
     }
     p {
       text-align: left !important;
