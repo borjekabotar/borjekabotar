@@ -27,7 +27,7 @@ const Footer = () => {
                   Isfahan province
                 </h6>
                 <p>
-                  PI: Danilo Rosati and Fariba Saiedi Anaraki
+                  Directors: Danilo Rosati and Fariba Saiedi Anaraki
                   <br />
                   Nation: Iran <br />
                   Period: 2018 – in progress <br />

@@ -37,13 +37,13 @@ const team = () => {
               <Card>
                 <Card.Body>
                   <Card.Title>Danilo Rosati</Card.Title>
-                  <Card.Text className="position">Project director</Card.Text>
+                  <Card.Text className="position">Project Director</Card.Text>
                 </Card.Body>
               </Card>
               <Card>
                 <Card.Body>
                   <Card.Title>Fariba Saiedi Anaraki</Card.Title>
-                  <Card.Text className="position">Project director</Card.Text>
+                  <Card.Text className="position">Project Director</Card.Text>
                 </Card.Body>
               </Card>
               <Card>
@@ -63,9 +63,9 @@ const team = () => {
             <p>
               The website and the webGIS have been created by{" "}
               <a href="https://www.linkedin.com/in/domizia-d-erasmo-927087195/">
-                Domizia D'Erasmo
+                Domizia D'Erasmo 
               </a>
-              and <a href="https://uniroma1.academia.edu/NoemiGiovino">Noemi Giovino</a>.
+              and <a href="https://uniroma1.academia.edu/NoemiGiovino"> Noemi Giovino</a>.
             </p>
           </Col>
         </Row>

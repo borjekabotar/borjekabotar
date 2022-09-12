@@ -37,7 +37,7 @@ const Header = () => {
                     Survey
                   </NavDropdown.Item>
                   <NavDropdown.Item href={withPrefix(`/pubblications/`)}>
-                    Pubblications
+                    Bibliography
                   </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href={withPrefix(`/webgis/`)}>WebGIS</Nav.Link>
