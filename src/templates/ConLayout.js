@@ -105,7 +105,7 @@ const Wrapper = styled.section`
     }
     .b-and-w {
       margin-top: 2rem;
-      filter: invert(100%);
+      filter: invert(40%);
     }
     p {
       text-align: left !important;
@@ -118,6 +118,9 @@ const Wrapper = styled.section`
     }
     .partner img {
       filter: invert(100%);
+    }
+    row {
+      margin: 0;
     }
   }
   
